@@ -15,18 +15,18 @@ class MultiplicationTable : AppCompatActivity() {
 
         // receiving data from the main activity
         val bundle: Bundle? = intent.extras
-        val tableString: String?.getString("tableNumber")
+        val tableString = bundle?.getString("tableNumber")
 
 
         // convert the table number to an integer
-        val tableNumber = tableString?.toint()
+        val tableNumber = tableString!!.toInt()
 
         // display the heading so we can see the value in action
         val multiplicationTable = findViewById<TextView>(R.id.textmultiply)
         multiplicationTable.text = "$tableNumber x table"
 
-        var tabledisplay : String = "$tableNumber x tables \n\n"
-         multiplicationTable.text = tabledisplay
+        var tabledisplay: String = "$tableNumber x tables \n\n"
+        multiplicationTable.text = tabledisplay
 
         // declare the control variable
         var counter = 1
@@ -41,10 +41,11 @@ class MultiplicationTable : AppCompatActivity() {
             counter++           // update the control variable
 
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+                insets
+            }
         }
     }
 }
