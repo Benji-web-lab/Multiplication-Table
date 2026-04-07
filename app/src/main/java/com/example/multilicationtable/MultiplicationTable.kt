@@ -1,6 +1,7 @@
 package com.example.multilicationtable
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,6 +12,35 @@ class MultiplicationTable : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_multiplication_table)
+
+        // receiving data from the main activity
+        val bundle: Bundle? = intent.extras
+        val tableString: String?.getString("tableNumber")
+
+
+        // convert the table number to an integer
+        val tableNumber = tableString?.toint()
+
+        // display the heading so we can see the value in action
+        val multiplicationTable = findViewById<TextView>(R.id.textmultiply)
+        multiplicationTable.text = "$tableNumber x table"
+
+        var tabledisplay : String = "$tableNumber x tables \n\n"
+         multiplicationTable.text = tabledisplay
+
+        // declare the control variable
+        var counter = 1
+        while (counter <= 10) {  // check the control variable
+            // skip 3
+            if (counter == 3) {
+                counter++
+                continue
+            }
+            val answer = tableNumber * counter
+            tabledisplay += "$tableNumber x $counter = ${answer}\n\n"
+            counter++           // update the control variable
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
