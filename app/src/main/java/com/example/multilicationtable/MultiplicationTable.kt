@@ -30,22 +30,18 @@ class MultiplicationTable : AppCompatActivity() {
 
         // declare the control variable
         var counter = 1
-        while (counter <= 10) {  // check the control variable
-            // skip 3
-            if (counter == 3) {
-                counter++
-                continue
-            }
+        while (counter <= 20) {  // check the control variable
             val answer = tableNumber * counter
             tabledisplay += "$tableNumber x $counter = ${answer}\n\n"
             counter++           // update the control variable
+        }
 
+        multiplicationTable.text = tabledisplay
 
-            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
                 val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
                 v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
                 insets
             }
         }
     }
-}

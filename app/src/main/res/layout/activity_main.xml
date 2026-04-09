@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/matematica_image"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,15 +13,16 @@
         android:layout_width="262dp"
         android:layout_height="62dp"
         android:text="Multiplication Table"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="84dp" />
+        android:textSize="28sp"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="81dp" />
 
     <Button
         android:id="@+id/MultiplyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MULTIPLY"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="151dp"
         tools:layout_editor_absoluteY="618dp" />
 
@@ -31,7 +33,7 @@
         android:ems="10"
         android:inputType="number"
         android:text="Enter the number"
-        android:textSize="20sp"
+        android:textSize="23sp"
         tools:layout_editor_absoluteX="112dp"
         tools:layout_editor_absoluteY="331dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

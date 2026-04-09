@@ -23,10 +23,17 @@ class MainActivity : AppCompatActivity() {
 
         // added a listener to listen for when the button is clicked
         Multiplybbutton.setOnClickListener {
-              // created a variable to hold the switch between pages/screens
+            // Get the number entered by the user
+            val numberEntered = NumInput.text.toString()
+
+            // created a variable to hold the switch between pages/screens
             val Intent = Intent(this, Multiplybbutton::class.java)
-                /*When this is called, the current/home page is closed and the multiply
-                 page is opened */
+
+            // Pass the number to the next activity
+            Intent.putExtra("tableNumber", numberEntered)
+
+            /*When this is called, the current/home page is closed and the multiply
+             page is opened */
             startActivity(Intent)
 
         }

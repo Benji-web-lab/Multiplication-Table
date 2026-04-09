@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/matematica_image"
     tools:context=".MultiplicationTable">
 
     <TextView
@@ -11,6 +12,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="multiply"
-        tools:layout_editor_absoluteX="187dp"
-        tools:layout_editor_absoluteY="316dp" />
+        android:textSize="23sp"
+        tools:layout_editor_absoluteX="177dp"
+        tools:layout_editor_absoluteY="340dp" />
+
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="575dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
